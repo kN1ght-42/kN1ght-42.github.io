@@ -1,0 +1,770 @@
+@import "./defaultSettings";
+@import "./variables";
+@import "./mixin";
+
+/* ========================== Body ========================== */
+
+body {
+	font-family: $fontMerriweather;
+}
+
+/* ========================== Body ========================== */
+
+/* ========================== Intro ========================== */
+
+.section__intro {
+	.intro__inner {
+		background: url("/assets/images/intro/bg.jpg") no-repeat;
+		background-position: center center;
+
+		height: 700px;
+
+		@media (max-width: 768px) {
+			background-position: center right;
+			background-position-x: -700px;
+		}
+
+		@media (max-width: 375px) {
+			background: url("/assets/images/intro/bg-adaptive.jpg") no-repeat;
+		}
+
+		.intro__content {
+			display: inline-block;
+
+			.intro__logo {
+				display: flex;
+				align-items: center;
+
+				padding-top: 25px;
+				.text {
+					color: $defaultColorBlack;
+					font-size: 16px;
+					font-weight: 700;
+					font-family: $fontGolosText;
+					line-height: 16px;
+
+					margin-left: 6px;
+				}
+			}
+
+			.title {
+				margin-top: 70px;
+
+				font-size: 60px;
+				line-height: 66px;
+				font-weight: 400;
+
+				text-transform: uppercase;
+
+				.title__middle {
+					margin-left: 95px;
+				}
+
+				.title__bottom {
+					margin-left: 38px;
+				}
+
+				@media (max-width: 1224px) {
+					font-size: 44px;
+					line-height: 50px;
+				}
+
+				@media (max-width: 992px) {
+					font-size: 36px;
+					line-height: 39px;
+				}
+
+				@media (max-width: 375px) {
+					margin-top: 40px;
+				}
+			}
+
+			.subtitle {
+				margin-top: 30px;
+
+				font-size: 18px;
+				line-height: 24px;
+				font-family: $fontGolosText;
+
+				text-align: center;
+
+				@media (max-width: 992px) {
+					font-size: 16px;
+					text-align: left;
+				}
+
+				@media (max-width: 576px) {
+					text-align: left;
+
+					br {
+						display: none;
+					}
+				}
+			}
+
+			.buttons {
+				display: flex;
+				align-items: center;
+
+				margin-top: 40px;
+
+				@media (max-width: 1224px) {
+					flex-direction: column;
+				}
+
+				button + button {
+					margin-left: 15px;
+
+					@media (max-width: 1224px) {
+						margin-left: 0px;
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ========================== /Intro ========================== */
+
+/* ========================== Support ========================== */
+
+.section__support {
+	margin-top: 70px;
+
+	.support__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 64px;
+
+		@media (max-width: 992px) {
+			flex-direction: column;
+			gap: 25px;
+		}
+
+		.support__content {
+			font-size: 36px;
+			font-weight: 400;
+			line-height: 48px;
+			text-transform: uppercase;
+
+			@media (max-width: 1224px) {
+				font-size: 44px;
+				line-height: 50px;
+			}
+
+			@media (max-width: 992px) {
+				font-size: 36px;
+				line-height: 39px;
+			}
+
+			@media (max-width: 375px) {
+				margin-top: 40px;
+			}
+
+			& > span {
+				color: $defaultColorRed;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+/* ========================== /Support ========================== */
+
+/* ========================== /Session ========================== */
+
+.section__session {
+	margin-top: 70px;
+
+	.session__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (max-width: 1224px) {
+			flex-direction: column;
+		}
+
+		gap: 44px;
+
+		@media (max-width: 1224px) {
+			gap: 24px;
+		}
+
+		.session__content {
+			.text {
+				font-size: 34px;
+				font-weight: 400;
+				line-height: 48px;
+
+				text-transform: uppercase;
+
+				& > span {
+					color: $defaultColorRed;
+					font-weight: 700;
+				}
+			}
+
+			.session__table {
+				margin-top: 40px;
+				margin-left: auto;
+				margin-right: auto;
+				font-size: 20px;
+				font-weight: 400;
+				font-family: $fontGolosText;
+
+				border: 3px solid transparent;
+
+				@media (max-width: 1224px) {
+					font-size: 16px;
+				}
+
+				@media (max-width: 576px) {
+					display: none;
+				}
+
+				td {
+					padding: 16px 0;
+					border: 2px solid rgba(208, 208, 208, 1);
+					text-align: left;
+
+					width: 310px;
+
+					vertical-align: middle;
+
+					@media (max-width: 1224px) {
+						width: 250px;
+						padding: 24px 0;
+					}
+				}
+
+				.td__right {
+					padding-left: 16px;
+					font-weight: 600;
+
+					& > span {
+						text-decoration: line-through;
+						text-decoration-color: $defaultColorRed;
+					}
+				}
+			}
+
+			.session__table--adaptive {
+				display: none;
+				margin-top: 44px;
+
+				td {
+					width: 600px;
+					padding: 16px 0;
+				}
+				tr {
+					width: 100%;
+					margin: 16px;
+					border-bottom: 2px solid rgba(208, 208, 208, 1);
+				}
+
+				tr > td {
+					font-family: $fontGolosText;
+
+					.title {
+						color: rgba(49, 49, 49, 1);
+						font-size: 20px;
+						font-weight: 400;
+					}
+
+					.value {
+						font-size: 20px;
+						font-weight: 600;
+						line-height: 24px;
+
+						margin-top: 12px;
+
+						&:last-child > span {
+							text-decoration: line-through;
+							text-decoration-color: $defaultColorRed;
+						}
+					}
+				}
+
+				@media (max-width: 576px) {
+					display: block;
+				}
+			}
+
+			.info {
+				margin-top: 50px;
+
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 22px;
+				font-family: $fontGolosText;
+
+				color: $defaultColorBlue;
+			}
+
+			@media (max-width: 576px) {
+				margin-top: 40px;
+			}
+		}
+	}
+}
+
+/* ========================== /Session ========================== */
+
+/* ========================== Stages ========================== */
+
+.section__stages {
+	margin-top: 70px;
+
+	.stages__title {
+		font-weight: 400;
+		font-size: 54px;
+		line-height: 64px;
+
+		text-transform: uppercase;
+
+		& > div:last-child {
+			display: flex;
+			align-items: center;
+			gap: 25px;
+		}
+
+		@media (max-width: 1280px) {
+			display: none;
+		}
+
+		@media (max-width: 992px) {
+			font-size: 40px;
+			line-height: 60px;
+		}
+
+		div > span {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 24px;
+			font-family: $fontGolosText;
+
+			color: $defaultColorBlue;
+		}
+	}
+
+	.stages__title--adaptive {
+		display: none;
+
+		@media (max-width: 1280px) {
+			display: block;
+		}
+	}
+
+	.switch--bottom {
+		display: none;
+		justify-content: center;
+
+		margin-top: 40px;
+
+		@media (max-width: 992px) {
+			display: flex;
+			align-items: center;
+		}
+
+		.count__dots {
+			display: flex;
+
+			margin: 0px 16px;
+
+			.count__item {
+				width: 10px;
+				height: 10px;
+
+				border-radius: 5px;
+
+				background-color: rgba(217, 217, 217, 1);
+
+				&.active {
+					background-color: $defaultColorBlack;
+				}
+			}
+
+			.count__item + .count__item {
+				margin-left: 6px;
+			}
+		}
+	}
+
+	.stages__item {
+		display: flex;
+		gap: 16px;
+
+		width: 394px;
+		height: 136px;
+
+		background-image: url("/assets/images/stages/stages-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		padding: 20px;
+
+		@media (max-width: 1280px) {
+			background-image: none;
+		}
+
+		&.stages__item--large {
+			height: 292px;
+			background-image: url("/assets/images/stages/stages-bg-lg.jpg");
+		}
+
+		&.stages__item--long {
+			width: 808px;
+			background-image: url("/assets/images/stages/stages-bg-lg.jpg");
+
+			position: relative;
+		}
+
+		.number {
+			font-size: 20px;
+			line-height: 35px;
+			font-weight: 600;
+			font-family: $fontGolosText;
+
+			background-color: #fff;
+			color: $defaultColorBlack;
+
+			border-radius: 18px;
+			width: 36px;
+			height: 36px;
+			text-align: center;
+		}
+
+		.title {
+			font-size: 20px;
+			font-weight: 500;
+			line-height: 24px;
+			font-family: $fontGolosText;
+
+			width: 300px;
+		}
+	}
+
+	.stages__inner {
+		margin-top: 60px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.stages__top {
+			display: flex;
+
+			gap: 20px;
+
+			& > div {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+
+				width: 40%;
+			}
+		}
+
+		.stages__bottom {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+
+		@media (max-width: 1280px) {
+			display: none;
+		}
+	}
+
+	.stages__slider {
+		display: none;
+		margin-top: 60px;
+		overflow: hidden;
+		width: 1222px;
+		margin: 60px auto 0;
+
+		@media (max-width: 1280px) {
+			display: block;
+			width: 830px;
+		}
+
+		@media (max-width: 992px) {
+			width: 450px;
+		}
+
+		.slider__line {
+			display: flex;
+
+			gap: 61px;
+
+			position: relative;
+			left: 0;
+
+			transition: all ease 1s;
+
+			// @media (max-width: 992px) {
+			// 	gap: 30px;
+			// }
+
+			.slider__item {
+				min-width: 385px;
+				height: 300px;
+
+				margin: 2px 0;
+
+				background-image: url(/assets/images/stages/stages-bg.jpg);
+				@media (max-width: 992px) {
+					&:first-child {
+						margin-left: 27px;
+					}
+				}
+
+				.name {
+					margin-top: 28px;
+
+					font-size: 24px;
+					font-weight: 600;
+					font-family: $fontGolosText;
+				}
+
+				.status {
+					margin-top: 6px;
+
+					font-size: 20px;
+					font-weight: 400;
+					font-family: $fontGolosText;
+
+					color: rgba(49, 49, 49, 1);
+				}
+			}
+		}
+	}
+}
+
+/* ========================== /Stages ========================== */
+
+/* ========================== Members ========================== */
+
+.section__members {
+	margin-top: 200px;
+
+	.switch--top {
+		display: flex;
+
+		@media (max-width: 992px) {
+			display: none;
+		}
+	}
+
+	.switch--bottom {
+		display: none;
+		justify-content: center;
+
+		margin-top: 40px;
+
+		@media (max-width: 992px) {
+			display: flex;
+		}
+	}
+
+	.switch {
+		align-items: center;
+		gap: 15px;
+
+		font-family: $fontGolosText;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.members__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (max-width: 992px) {
+			justify-content: center;
+		}
+		.title {
+			font-size: 54px;
+			font-weight: 400;
+			font-family: $fontMerriweather;
+
+			@media (max-width: 1280px) {
+				font-size: 40px;
+			}
+
+			@media (max-width: 768px) {
+				font-size: 30px;
+			}
+
+			text-transform: uppercase;
+		}
+	}
+
+	.members__slider {
+		margin-top: 60px;
+		overflow: hidden;
+		width: 1222px;
+		margin: 60px auto 0;
+
+		@media (max-width: 1280px) {
+			width: 800px;
+		}
+
+		@media (max-width: 992px) {
+			width: 375px;
+		}
+
+		.slider__line--members {
+			display: flex;
+
+			gap: 131px;
+
+			position: relative;
+			left: 0;
+
+			transition: all ease 1s;
+
+			// @media (max-width: 992px) {
+			// 	gap: 30px;
+			// }
+
+			.slider__item {
+				margin: 2px 0;
+
+				text-align: center;
+				min-width: 320px;
+				@media (max-width: 992px) {
+					&:first-child {
+						margin-left: 27px;
+					}
+				}
+
+				@media (max-width: 400px) {
+					min-width: 250px;
+				}
+
+				.name {
+					margin-top: 28px;
+
+					font-size: 24px;
+					font-weight: 600;
+					font-family: $fontGolosText;
+				}
+
+				.status {
+					margin-top: 6px;
+
+					font-size: 20px;
+					font-weight: 400;
+					font-family: $fontGolosText;
+
+					color: rgba(49, 49, 49, 1);
+				}
+			}
+		}
+	}
+}
+
+/* ========================== Footer ========================== */
+
+.section__footer {
+	margin-top: 160px;
+
+	.footer__inner {
+		background-color: rgba(233, 222, 212, 1);
+		padding: 40px 72px;
+
+		@media (max-width: 992px) {
+			padding: 40px 30px;
+		}
+		.text {
+			font-size: 16px;
+			font-weight: 400;
+			color: rgba(49, 49, 49, 1);
+			font-family: $fontGolosText;
+		}
+	}
+}
+
+/* ========================== Footer ========================== */
+
+/* ========================== Buttons ========================== */
+
+.button__main {
+	@include button($defaultColorBlack, #fff, $defaultColorYellow, $defaultColorBlack, none);
+}
+
+.button__secondary {
+	@media (max-width: 768px) {
+		@include button(rgba(255, 255, 255, 0.8), $defaultColorBlack, $defaultColorBlack, #fff, none);
+	}
+}
+
+.buttons__slider {
+	margin-top: 20px;
+	padding: 12px;
+
+	font-size: 16px;
+
+	border-radius: 62px;
+	outline: 1px solid $defaultColorBlue;
+
+	color: $defaultColorBlue;
+
+	transition: all 0.3s ease-in-out;
+}
+
+.buttons__slider:hover {
+	background-color: $defaultColorBlue;
+	color: #fff;
+}
+
+.members__button,
+.stages__button {
+	width: 44px;
+	height: 44px;
+
+	background-color: $defaultColorBlack;
+
+	border-radius: 50%;
+
+	transition: all 0.3s ease-in-out;
+
+	.slider__svg {
+		width: 44px;
+		height: 42px;
+		fill: #fff;
+	}
+
+	&.members__button--next,
+	&.stages__button--next {
+		.slider__svg {
+			rotate: 180deg;
+		}
+	}
+
+	&:hover {
+		background-color: $defaultColorYellow;
+	}
+
+	&:disabled {
+		background-color: rgba(214, 214, 214, 1);
+	}
+}
+
+/* ========================== /Buttons ========================== */
+
+/* ========================== Images ========================== */
+
+.stages__image {
+	position: absolute;
+	right: -60px;
+	top: 20px;
+	transform: translateY(-50%);
+}
+
+/* ========================== /Images ========================== */
