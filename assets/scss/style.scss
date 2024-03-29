@@ -422,6 +422,23 @@ body {
 			position: relative;
 		}
 
+		&:first-child {
+			position: relative;
+
+			img {
+				position: absolute;
+				left: 50%;
+				bottom: 160px;
+				transform: translateX(-50%);
+
+				z-index: 1000;
+
+				@media (max-width: 576px) {
+					height: 180px;
+				}
+			}
+		}
+
 		.number {
 			font-size: 20px;
 			line-height: 35px;
@@ -444,6 +461,10 @@ body {
 			font-family: $fontGolosText;
 
 			width: 300px;
+
+			@media (max-width: 576px) {
+				width: 250px;
+			}
 		}
 	}
 
@@ -481,8 +502,11 @@ body {
 
 	.stages__slider {
 		display: none;
-		margin-top: 60px;
+
+		padding-top: 150px !important;
+
 		overflow: hidden;
+
 		width: 1222px;
 		margin: 60px auto 0;
 
@@ -495,6 +519,10 @@ body {
 			width: 450px;
 		}
 
+		@media (max-width: 576px) {
+			width: 350px;
+		}
+
 		.slider__line {
 			display: flex;
 
@@ -505,20 +533,26 @@ body {
 
 			transition: all ease 1s;
 
-			// @media (max-width: 992px) {
-			// 	gap: 30px;
-			// }
+			overflow-y: revert;
 
 			.slider__item {
 				min-width: 385px;
-				height: 300px;
+				height: 400px;
+
+				padding-top: 100px;
 
 				margin: 2px 0;
 
 				background-image: url(/assets/images/stages/stages-bg.jpg);
 				@media (max-width: 992px) {
 					&:first-child {
-						margin-left: 27px;
+						margin-left: 32px;
+					}
+				}
+
+				@media (max-width: 576px) {
+					&:first-child {
+						margin-left: 0;
 					}
 				}
 
@@ -615,7 +649,14 @@ body {
 		}
 
 		@media (max-width: 992px) {
-			width: 375px;
+			width: 350px;
+		}
+
+		@media (max-width: 576px) {
+			width: 260px;
+		}
+		@media (max-width: 992px) {
+			width: 350px;
 		}
 
 		.slider__line--members {
@@ -628,9 +669,9 @@ body {
 
 			transition: all ease 1s;
 
-			// @media (max-width: 992px) {
-			// 	gap: 30px;
-			// }
+			@media (max-width: 400px) {
+				gap: 203px;
+			}
 
 			.slider__item {
 				margin: 2px 0;
@@ -639,7 +680,13 @@ body {
 				min-width: 320px;
 				@media (max-width: 992px) {
 					&:first-child {
-						margin-left: 27px;
+						margin-left: 17px;
+					}
+				}
+
+				@media (max-width: 400px) {
+					&:first-child {
+						margin-left: 50px;
 					}
 				}
 

@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let offset = 0;
     const sliderLine = document.querySelector(".slider__line--members");
-    console.log(sliderLine);
     const switchButtonMain = document.querySelectorAll(".members__button");
-
     const currentCount = document.querySelectorAll(".counter");
     let widthIndex;
 
